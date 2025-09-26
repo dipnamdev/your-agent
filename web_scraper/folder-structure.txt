@@ -1,0 +1,33 @@
+web_scraper_ai_agent/
+│
+├── uv.py                     # Main entry point to run the tool
+├── config.py                 # Configuration: concurrency, delays, storage options, max depth
+├── requirements.txt          # Python dependencies (playwright, aiohttp, asyncio, sqlite3, etc.)
+│
+├── crawler/
+│   ├── __init__.py
+│   ├── crawler.py             # Core crawler: discovers links, adds to queue
+│   ├── queue_manager.py       # Central queue + visited URL tracking
+│   └── url_utils.py           # URL normalization, domain checks
+│
+├── scraper/
+│   ├── __init__.py
+│   ├── scraper_worker.py      # Async scraper worker: takes URL from queue, scrapes content
+│   ├── content_extractor.py   # Extracts main content, metadata, images, page type
+│   └── playwright_utils.py    # Playwright setup, browser/page context helpers
+│
+├── storage/
+│   ├── __init__.py
+│   ├── db_manager.py          # SQLite DB handling, table creation, inserts
+│   └── models.py              # Data model: page_url, title, content, meta, links, page_type
+│
+├── utils/
+│   ├── __init__.py
+│   ├── logger.py              # Logging setup for scraping progress/errors
+│   ├── retry.py               # Retry logic for failed requests
+│   └── helpers.py             # Misc helper functions (delays, randomization)
+│
+├── data/                      # Optional: store temporary JSON dumps if needed
+│   └── ...
+│
+└── README.md 

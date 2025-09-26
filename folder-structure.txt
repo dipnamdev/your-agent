@@ -1,0 +1,91 @@
+web_scraper_ai_agent/
+│
+├── uv.py                     # Main entry point to run the tool
+├── config.py                 # Configuration: concurrency, delays, storage options, max depth
+├── requirements.txt          # Python dependencies (playwright, aiohttp, asyncio, sqlite3, etc.)
+│
+├── crawler/
+│   ├── __init__.py
+│   ├── crawler.py             # Core crawler: discovers links, adds to queue
+│   ├── queue_manager.py       # Central queue + visited URL tracking
+│   └── url_utils.py           # URL normalization, domain checks
+│
+├── scraper/
+│   ├── __init__.py
+│   ├── scraper_worker.py      # Async scraper worker: takes URL from queue, scrapes content
+│   ├── content_extractor.py   # Extracts main content, metadata, images, page type
+│   └── playwright_utils.py    # Playwright setup, browser/page context helpers
+│
+├── storage/
+│   ├── __init__.py
+│   ├── db_manager.py          # SQLite DB handling, table creation, inserts
+│   └── models.py              # Data model: page_url, title, content, meta, links, page_type
+│
+├── utils/
+│   ├── __init__.py
+│   ├── logger.py              # Logging setup for scraping progress/errors
+│   ├── retry.py               # Retry logic for failed requests
+│   └── helpers.py             # Misc helper functions (delays, randomization)
+│
+├── data/                      # Optional: store temporary JSON dumps if needed
+│   └── ...
+│
+└── README.md 
+
+
+```markdown
+. 📂 Project_YA
+└── 📂 __pycache__/
+├── 📄 config.py
+└── 📂 data/
+│  ├── 📄 scraper.db
+└── 📂 data_processing/
+│  ├── 📄 __init__.py
+│  ├── 📄 chunk.py
+│  ├── 📄 clean.py
+│  ├── 📄 embed.py
+│  ├── 📄 normalize.py
+│  ├── 📄 pipeline.py
+│  ├── 📄 save.py
+├── 📄 folder-structure.txt
+├── 📄 main.py
+├── 📄 pyproject.toml
+├── 📄 readme.md
+├── 📄 requirements.txt
+└── 📂 utils/
+│  ├── 📄 __init__.py
+│  └── 📂 __pycache__/
+│  ├── 📄 helpers.py
+│  ├── 📄 logger.py
+│  ├── 📄 retry.py
+├── 📄 uv.lock
+└── 📂 web_scraper/
+│  └── 📂 __pycache__/
+│  └── 📂 crawler/
+│    ├── 📄 __init__.py
+│    └── 📂 __pycache__/
+│    ├── 📄 crawler.py
+│    ├── 📄 queue_manager.py
+│    ├── 📄 url_utils.py
+│  ├── 📄 folder-structure.txt
+│  └── 📂 output/
+│    ├── 📄 scraped_worker_0.txt
+│    ├── 📄 scraped_worker_1.txt
+│    ├── 📄 scraped_worker_2.txt
+│    ├── 📄 scraped_worker_3.txt
+│    ├── 📄 scraped_worker_4.txt
+│  ├── 📄 readme.md
+│  └── 📂 scraper/
+│    ├── 📄 __init__.py
+│    └── 📂 __pycache__/
+│    ├── 📄 content_extractor.py
+│    ├── 📄 playwright_utils.py
+│    ├── 📄 scraper_worker.py
+│  └── 📂 storage/
+│    ├── 📄 __init__.py
+│    └── 📂 __pycache__/
+│    ├── 📄 db_manager.py
+│    ├── 📄 models.py
+│  ├── 📄 uv.py
+│  └── 📄 view_db.py
+```

@@ -1,0 +1,17 @@
+playwright
+aiohttp
+beautifulsoup4
+lxml
+tqdm
+aiosqlite
+aiofiles
+sentence_transformers
+numpy
+langchain
+sentence_transformers
+huggingface_hub[hf_xet]
+gradio
+openai
+faiss-cpu
+fastapi
+uvicorn[standard]

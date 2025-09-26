@@ -1,0 +1,29 @@
+[project]
+name = "project-ya"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "aiohttp>=3.12.15",
+    "aiosqlite>=0.21.0",
+    "beautifulsoup4>=4.13.5",
+    "dotenv>=0.9.9",
+    "faiss-cpu>=1.12.0",
+    "fastapi>=0.117.1",
+    "gradio>=5.47.0",
+    "huggingface-hub[hf-xet]>=0.34.6",
+    "langchain>=0.3.27",
+    "langchain-community>=0.3.29",
+    "langchain-experimental>=0.3.4",
+    "langchain-huggingface>=0.3.1",
+    "langchain-openai>=0.3.33",
+    "lxml>=6.0.1",
+    "numpy>=2.3.3",
+    "openai>=1.107.3",
+    "playwright>=1.55.0",
+    "sentence-transformers>=5.1.0",
+    "tqdm>=4.67.1",
+    "uvicorn[standard]>=0.37.0",
+]
